@@ -14,7 +14,7 @@ branch in the destination repository, and commits them there — with a
   and `--source-branch` in the source repository, using three-dot
   (`target...source`) semantics so unrelated changes made on the target
   branch after the two diverged are excluded.
-- **Extension filtering** — only files with `.java`, `.properties`, or
+- **Extension filtering** — only files with `.rb`, `.properties`, or
   `.json` extensions are considered.
 - **git-status-style change summary** — before doing anything, prints the
   changed files labeled like `git status` (`new file:`, `modified:`,
@@ -76,22 +76,22 @@ codemigrator \
 
 ```sh
 codemigrator \
-  --source-repo ~/dev/pg-p3-components \
+  --source-repo ~/dev/components \
   --target-branch origin/dev \
-  --source-branch RJCOLGASC \
-  --dest-repo ~/dev/intern-pg-p3-components
+  --source-branch RJCOEWWLGASC \
+  --dest-repo ~/dev/intern-components
 ```
 
 This will:
 
 1. Print the two repositories and branches involved.
-2. Fast-forward `dev` in `intern-pg-p3-components` from `origin`.
-3. Diff `origin/dev...RJCOLGASC` in `pg-p3-components` and print the matching
-   changed files (`.java`/`.properties`/`.json`) in a `git status`-style list.
+2. Fast-forward `dev` in `intern-components` from `origin`.
+3. Diff `origin/dev...RJCEWWOLGASC` in `pg-p3-components` and print the matching
+   changed files (`.rb`/`.properties`/`.json`) in a `git status`-style list.
 4. Prompt: `Enter branch name to create in destination repository:` — creates
-   and checks out that branch in `intern-pg-p3-components`.
-5. Copy each changed file's content from `RJCOLGASC` into the destination
-   repo (deleting files there that were deleted on `RJCOLGASC`).
+   and checks out that branch in `intern-components`.
+5. Copy each changed file's content from `RJCEWWOLGASC` into the destination
+   repo (deleting files there that were deleted on `RJCEWWOLGASC`).
 6. Prompt: `Enter commit message:` — stages and commits exactly the copied
    files on the new branch.
 
